@@ -59,10 +59,40 @@ This was the only problem I still haven't fixed. The problem is that when the pu
 
 
 # Assembely
-## Programming ESP8266 ESP-01S Wifi module
+For now the connection diagrams are only in text form but I will try to update them with pictures.
 
+## ESP8266 ESP-01S Wifi module - Programing diagram
+```
+ ESP-01S | ARDUINO
+---------|--------
+     VCC | 3.3V
+     GND | GND
+      TX | TX
+      RX | (voltage divider) 1Kohm -> RX (connects here) -> 2Kohm -> GND
+   CH_EN |  10Kohm -> GND
+     RST | floating
+GPIO - 0 | GND
+GPIO - 2 | floating
+```
 
-## Final assemebly
+## ESP8266 ESP-01S Wifi module - Testing diagram
+```
+ ESP-01S | LM2596S DC-DC (3.3V output)
+---------|--------
+     VCC | 3.3V
+     GND | GND
+      TX | floating or RX
+      RX | floating or TX
+   CH_EN | floating
+     RST | floating
+GPIO - 0 | floating
+GPIO - 2 | floating
+```
+
+## Final assemebly diagram
 
 
 # Software
+## Arduino
+## ESP8266
+## API
