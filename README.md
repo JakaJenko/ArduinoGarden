@@ -24,7 +24,7 @@ avrdude: Device signature = 0x000000
 avrdude: Yikes!  Invalid device signature. 
 ```
 
-I have tried fixinf the probem by:
+I have tried fixing the problem by:
 - Changing the Board and Processor setting in the Arduino IDE
 - Holding the reset button for some amount of time while the program is uploading
 - Running the avrdude from CMD
@@ -42,7 +42,7 @@ The conenction diagram that worked for me can be found beneeth ([Connection diag
 And I have overcome the power limitation by connectiong the ESP8266 to the external power supply (after I have uploaded the code and disconected it from the USB port).
 
 ## LED turning on unintentionaly
-
+This was the only problem I still haven't fixed. The problem is that when the pump is running the LED light starts to shine very dimm. This is probably caused by long wires and shortening would fix this, but I still havent tried that.
 
 # Hardware
 - Arduino Nano  
