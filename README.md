@@ -33,12 +33,12 @@ I have tried fixinf the probem by:
 but nothing fixed the problem. In the end I have just ordered couple of new Arduino Nanos and the everything started working normaly.
 
 ## Broken cable
-In the middle of working on this project I started getting error while uploading the code on Arduino and ESP8266.
+In the middle of working on this project I started getting error while uploading the code on Arduino and ESP8266.  
 Some of the problmes went away by just wigeling the USB cable but went completly away when I changed the USB cable.
 
 ## ESP8266 ESP-01S Wifi module not working properly
-This problem was the most time consuming, but in the end the fix was quite simple. The problem turned out to be with the connections of ESP8266 and power limitation of Arduino Nano.
-The conenction diagram that worked for me can be found beneeth ([Connection diagram] (#-Programming-ESP8266-ESP-01S-Wifi-module)).
+This problem was the most time consuming, but in the end the fix was quite simple. The problem turned out to be with the connections of ESP8266 and power limitation of Arduino Nano.  
+The conenction diagram that worked for me can be found beneeth ([Connection diagram] (#-Programming-ESP8266-ESP-01S-Wifi-module)).  
 And I have overcome the power limitation by connectiong the ESP8266 to the external power supply (after I have uploaded the code and disconected it from the USB port).
 
 ## LED turning on unintentionaly
