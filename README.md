@@ -4,7 +4,7 @@ Arduino irrigator with wifi
 # Description
 
 # Encountered problems
-Over the course of the project I have encountered a few problems there were mostly fixed in the end.
+Throughout the project I have encountered a few problems there were mostly fixed in the end.
 
 ## Broken Arduino
 That was the first problem I have encountered. While uploading the code on the Arduino I was getting errors.
@@ -30,19 +30,19 @@ I have tried fixing the problem by:
 - Running the avrdude from CMD
 - Changing the USB cable
 
-but nothing fixed the problem. In the end I have just ordered couple of new Arduino Nanos and the everything started working normaly.
+but nothing fixed the problem. In the end, I have just ordered a couple of new Arduino Nanos and everything started working normally.
 
 ## Broken cable
-In the middle of working on this project I started getting error while uploading the code on Arduino and ESP8266.  
-Some of the problmes went away by just wigeling the USB cable but went completly away when I changed the USB cable.
+In the middle of working on this project, I started getting an error while uploading the code on Arduino and ESP8266.  
+Some of the problems went away by just wiggling the USB cable but went completely away when I changed the USB cable.
 
 ## ESP8266 ESP-01S Wifi module not working properly
-This problem was the most time consuming, but in the end the fix was quite simple. The problem turned out to be with the connections of ESP8266 and power limitation of Arduino Nano.  
-The conenction diagram that worked for me can be found beneeth ([Connection diagram] (#-Programming-ESP8266-ESP-01S-Wifi-module)).  
-And I have overcome the power limitation by connectiong the ESP8266 to the external power supply (after I have uploaded the code and disconected it from the USB port).
+This problem was the most time consuming, but in the end, the fix was quite simple. The problem turned out to be with the connections of ESP8266 and the power limitation of Arduino Nano.  
+The connection diagram that worked for me can be found beneath ([Connection diagram] (#-Programming-ESP8266-ESP-01S-Wifi-module)).  
+And I have overcome the power limitation by connecting the ESP8266 to the external power supply (after I have uploaded the code and disconnected it from the USB port).
 
-## LED turning on unintentionaly
-This was the only problem I still haven't fixed. The problem is that when the pump is running the LED light starts to shine very dimm. This is probably caused by long wires and shortening would fix this, but I still havent tried that.
+## LED turning on unintentionally
+This was the only problem I still haven't fixed. The problem is that when the pump is running the LED light starts to shine very dimly. This is probably caused by long wires and shortening would fix this, but I still haven't tried that.
 
 # Hardware
 - Arduino Nano  
@@ -59,7 +59,7 @@ This was the only problem I still haven't fixed. The problem is that when the pu
 
 
 # Assembely
-For now the connection diagrams are only in text form but I will try to update them with pictures.
+For now, the connection diagrams are only in text form but I will try to update them with pictures.
 
 ## ESP8266 ESP-01S Wifi module - Programing diagram
 ```
@@ -89,7 +89,7 @@ GPIO - 0 | floating
 GPIO - 2 | floating
 ```
 
-## Final assemebly diagram
+## Final assembly diagram
 
 
 # Software
