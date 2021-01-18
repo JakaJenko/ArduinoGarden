@@ -9,7 +9,7 @@ Over the course of the project I have encountered a few problems there were most
 ## Broken Arduino
 That was the first problem I have encountered. While uploading the code on the Arduino I was getting errors.
 
-'''
+```
 stk500_getparm(): (a) protocol error, expect=0x14, resp=0xfc
 stk500_recv(): programmer is not responding
 
@@ -22,7 +22,7 @@ avrdude: Device signature = 0x000000 (retrying)
 avrdude: Device signature = 0x000000 (retrying)
 avrdude: Device signature = 0x000000
 avrdude: Yikes!  Invalid device signature. 
-'''
+```
 
 I have tried fixinf the probem by:
 - Changing the Board and Processor setting in the Arduino IDE
