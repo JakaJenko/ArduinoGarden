@@ -1,0 +1,130 @@
+﻿@model List<Tuple<int, int>>
+
+@{
+	ViewBag.Title = "Home Page";
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
+<script>
+	function toDateTime(value, minSec) {
+		var t = new Date(1970, 0, 1);
+
+		if (minSec == "min")
+			t.setMinutes(value);
+		else if(minSec == "sec")
+			t.setSeconds(value);
+
+		return t;
+	}
+
+	function GetApiUrl() {
+		if (location.hostname === "localhost" || location.hostname === "127.0.0.1")
+			return "/api/Garden/";
+		else
+			return "/ArduinoGarden/api/Garden/"
+	}
+
+	function HttpSet(value) {
+		$.get(GetApiUrl() + "SetValue/" + value)
+		setTimeout(function () {
+			ShowMoistureGraph("LightData");
+		}, 200);
+	}
+
+	function ShowMoistureGraph(name) {
+		var minSec;
+		var maxY;
+		var tension;
+
+		if (name == "LightData") {
+			tension = 0;
+			maxY = 1;
+			minSec = "sec";
+		}
+		else if (name == "MoistureData") {
+			tension = 0.2;
+			maxY = 100;
+			minSec = "min";
+		}
+
+		$.get(GetApiUrl() + name, function (responce) {
+			responce = JSON.parse(responce);
+			console.log(responce);
+
+			for (var i = 0; i < responce.length; i++) {
+				responce[i].x = toDateTime(responce[i].x, minSec);
+			}
+
+			var ctx = document.getElementById(name + "Id").getContext('2d');
+
+			var myLineChart = new Chart(ctx, {
+				type: 'line',
+				data: {
+					datasets: [{
+						label: 'Scatter Dataset',
+						data: responce
+					}]
+				},
+				options: {
+					pan: {
+						enabled: false,
+					},
+					zoom: {
+						enabled: false,
+					},
+					tooltips: {
+						enabled: false
+					},
+					responsive: true,
+					maintainAspectRatio: false,
+					elements: {
+						line: {
+							tension: tension
+						}
+					},
+					scales: {
+						xAxes: [{
+							type: 'linear',
+							position: 'bottom',
+							ticks: {
+								userCallback: function (label, index, labels) {
+									var d = new Date(label);
+									return d.toDateString();
+								}
+							}
+						}],
+						yAxes: [{
+							ticks: {
+								suggestedMin: 0,
+								suggestedMax: maxY
+							}
+						}]
+					}
+				}
+			});
+
+		});
+	}
+
+	ShowMoistureGraph("LightData");
+	ShowMoistureGraph("MoistureData");
+</script>
+
+<div class="row">
+	<div class="col-md-12">
+		<canvas id="LightDataId" width="400" height="400"></canvas>
+	</div>
+	<div class="col-md-12">
+		<button onclick="HttpSet('1')">ON</button> <br />
+		<button onclick="HttpSet('0')">OFF</button> <br />
+	</div>
+
+	<br />
+	<br />
+
+	<div class="col-md-12">
+		<canvas id="MoistureDataId" width="400" height="400"></canvas>
+	</div>
+</div>
