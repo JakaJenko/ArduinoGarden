@@ -2,6 +2,8 @@
 Arduino irrigator with wifi
 
 # Description
+After quite some years (6 years maybe?) of not touching the Arduino, I have decided to do a simple project.  
+The goal of the project was to create a simple irrigation system for my chilly plant and connect it to the internet so I would be able to monitor the moisture data.
 
 # Encountered problems
 Throughout the project I have encountered a few problems there were mostly fixed in the end.
